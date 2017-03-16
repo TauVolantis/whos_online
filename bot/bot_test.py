@@ -1,9 +1,9 @@
 import discord
-from discord.ext.commands import Bot
-import logging
+from discord.ext import commands
+import steamapi as steam
+import bot_tools as tools
 
-bot = Bot(command_prefix="!")
-logger = logging.getLogger('discord')
+bot = commands.Bot(command_prefix=commands.when_mentioned_or("*"), description="An online gaming status checker")
 
 @bot.event
 async def on_ready():
@@ -14,10 +14,20 @@ async def on_ready():
 
 @bot.command()
 async def hello(*args):
-    return await bot.say("Hello, world!")
+    await bot.say("Hello, world!")
 
 @bot.command()
-	async def yes(*args):
-	return await bot.say("YES, YES, YES!")
+async def yes(*args):
+	await bot.say("YES, YES, YES!")
 
-bot.run('token')
+@bot.command()
+async def hey(*args):
+	await bot.say("something")
+
+# @bot.event
+# async def on_message(message):
+#     if message.content.startswith('$greet'):
+#         msg = 'Hello {0.author.mention}'.format(message)
+#         await bot.send_message(message.channel, msg)
+
+bot.run(tools.get_key())

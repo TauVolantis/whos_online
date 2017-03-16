@@ -1,0 +1,10 @@
+# Plugins / Additional Libraries
+steamapi/
+keys/
+
+# Cached Dirs / Files
+__pycache__/
+
+# Project Configs
+*.sublime-project
+*.sublime-workspace
