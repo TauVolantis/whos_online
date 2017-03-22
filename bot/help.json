@@ -1,0 +1,16 @@
+{
+	"adduser" : "To add a user, type: *adduser <steamid>",
+	"removeuser" : "To remove a user, type: *removeuser <steamid>",
+	"getname" : "pass",
+	"steamid" : "pass",
+	"playing" : "pass",
+	"status" : "pass",
+	"friends" : "pass",
+	"level" : "pass",
+	"games" : "pass",
+	"owned" : "pass",
+	"avatar" : "pass",
+	"when_created" : "pass",
+	"xp" : "pass",
+	"last_logoff" : "pass"
+}

@@ -4,6 +4,7 @@ keys/
 
 # Cached Dirs / Files
 __pycache__/
+steamusers.json
 
 # Project Configs
 *.sublime-project
