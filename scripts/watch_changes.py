@@ -1,6 +1,6 @@
 import sys
 import time
-from subprocess import Popen
+from subprocess import Popen, PIPE, call
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
 
@@ -17,6 +17,10 @@ class ChangeHandler(PatternMatchingEventHandler):
 		Runs the discord bot.run command when called
 		"""
 		print(event.src_path, event.event_type)
+		pipe = Popen('ps ax | grep whosonline', shell=True, stdout=PIPE).stdout
+		output = pipe.readlines()[0].decode("utf-8")
+		if "/bot/whosonline.py" in output:
+			call([ 'kill', output.split(" ")[0] ]) 
 		Popen(['python3', '../bot/whosonline.py'])
 
 	def on_any_event(self, event):
